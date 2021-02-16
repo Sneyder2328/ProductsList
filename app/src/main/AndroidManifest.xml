@@ -12,8 +12,11 @@
         android:supportsRtl="true"
         android:name=".ProductsListApp"
         android:theme="@style/Theme.ProductsList">
-        <activity android:name=".ui.productDetails.ProductDetailsActivity"/>
-        <activity android:name=".ui.productList.ProductListActivity">
+        <activity
+            android:label="Item"
+            android:name=".ui.productDetails.ProductDetailsActivity"/>
+        <activity
+            android:name=".ui.productList.ProductListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

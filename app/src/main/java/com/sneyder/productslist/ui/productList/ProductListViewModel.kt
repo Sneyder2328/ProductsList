@@ -17,8 +17,10 @@ class ProductListViewModel
 ) : ViewModel() {
 
     val products by lazy { MutableLiveData<ProductsResponse>() }
+    val isLoading by lazy { MutableLiveData<Boolean>() }
 
     fun loadProducts() {
+        isLoading.value = true
         viewModelScope.launch {
             val response = withContext(IO) {
                 try {
@@ -30,6 +32,7 @@ class ProductListViewModel
             }
             response?.let { products.value = it }
         }
+        isLoading.value = false
     }
 
 
