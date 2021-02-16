@@ -1,4 +1,9 @@
 package com.sneyder.productslist.data.repository
 
-class ProductRepository {
+import com.sneyder.productslist.data.model.ProductsResponse
+
+abstract class ProductRepository {
+
+    abstract suspend fun fetchProducts(): ProductsResponse
+
 }
